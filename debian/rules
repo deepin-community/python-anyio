@@ -1,4 +1,15 @@
 #!/usr/bin/make -f
 
+include /usr/share/dpkg/pkg-info.mk
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=${DEB_VERSION_UPSTREAM}
+
 %:
-	dh $@
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_test:
+	@echo "Upstream test suite fails if the package isn't installed"
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf src/anyio.egg-info/

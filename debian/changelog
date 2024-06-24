@@ -1,5 +1,164 @@
-template-repository (1.0-1) unstable; urgency=medium
+python-anyio (4.4.0-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
+  * Bump standards-version to 4.7.0.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 09 Jun 2024 10:14:01 +0200
+
+python-anyio (4.3.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 01 Apr 2024 16:47:26 +0200
+
+python-anyio (4.2.0-1) unstable; urgency=medium
+
+  * Add missing depends on python3-exceptiongroup.
+  * New upstream release.
+  * Make build-clean-build work.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 18 Jan 2024 19:03:16 +0100
+
+python-anyio (4.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 12 Dec 2023 09:28:21 +0100
+
+python-anyio (3.7.0-1) unstable; urgency=medium
+
+  * Fix patch metadata.
+  * Bump standards-version to 4.6.2.
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 25 Jun 2023 06:55:12 +0200
+
+python-anyio (3.6.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 28 Oct 2022 00:51:04 +0200
+
+python-anyio (3.6.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump standards-version to 4.6.1.
+  * Refresh patches.
+  * Don't run upstream test suite at build-time, but
+  make autopkgtest work.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 20 May 2022 08:53:08 +0200
+
+python-anyio (3.5.0-4) unstable; urgency=medium
+
+  * Apply Gianfranco Costamagna's patch (Closes: #1006816).
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 09 May 2022 09:07:33 +0200
+
+python-anyio (3.5.0-3) unstable; urgency=medium
+
+  * Better patch to fix tests with missing IPv4 and IPv6 (Closes: #1006816).
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 18 Mar 2022 23:42:42 +0100
+
+python-anyio (3.5.0-2) unstable; urgency=medium
+
+  * Add patch to disable IPv4 tests if not available (Closes: #1004461).
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 05 Feb 2022 17:18:10 +0100
+
+python-anyio (3.5.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 19 Jan 2022 14:12:35 +0100
+
+python-anyio (3.4.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Refresh patch.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 23 Nov 2021 09:13:18 +0100
+
+python-anyio (3.3.4-2) unstable; urgency=medium
+
+  * Fix d/watch.
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 26 Oct 2021 16:42:33 +0200
+
+python-anyio (3.3.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sun, 17 Oct 2021 23:25:01 +0200
+
+python-anyio (3.3.2-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Set upstream metadata fields: Bug-Submit.
+
+  [ Julien Puydt ]
+  * Bump standards-version to 4.6.0.
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 02 Oct 2021 10:41:13 +0200
+
+python-anyio (3.3.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Julien Puydt <jpuydt@debian.org>  Sat, 18 Sep 2021 10:11:45 +0200
+
+python-anyio (3.3.0-4) unstable; urgency=medium
+
+  * debian/test/*
+    - fix autopkgtest by installing b-d and setting the right pytest args
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 14 Sep 2021 23:15:24 -0400
+
+python-anyio (3.3.0-3) unstable; urgency=medium
+
+  * debian/tests/control
+    - set a versioned depends on pytest for autopkgtest
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 13 Sep 2021 21:14:02 -0400
+
+python-anyio (3.3.0-2) unstable; urgency=medium
+
+  * debian/rules
+    - run test verbosely and skip test_is_block_device, fails on buildd
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 11 Sep 2021 20:47:00 -0400
+
+python-anyio (3.3.0-1) unstable; urgency=medium
+
+  [ Julien Puydt ]
+  * Fix d/watch.
+  * Package new upstream 3.3.0.
+  * Update disable_backends.patch to new upstream.
+
+  [ Sandro Tosi ]
+  * debian/control
+    - use proper team name and email address
+    - add pip, setuptools-scm, pytest, pytest-mock, hypothesis to b-d, needed
+      to install and run tests
+    - set versioned b-d on pytest to >= 6.2.5
+  * debian/rules
+    - adapt how we run test to include egg_info and ignore
+      DeprecationWarnings
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 09 Sep 2021 16:35:42 -0400
+
+python-anyio (2.0.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * No change source-only upload for testing migration.
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 26 Jan 2021 19:12:43 -0500
+
+python-anyio (2.0.2-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #978619)
+
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 29 Dec 2020 13:36:17 +0100

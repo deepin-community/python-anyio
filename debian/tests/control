@@ -1,0 +1,2 @@
+Tests: upstreamtestsuite3
+Depends: @builddeps@, @
