@@ -1,0 +1,25 @@
+Description: disable testing the trio backend (too old)
+Author: Julien Puydt
+Forwarded: not-needed
+
+--- python-anyio.orig/src/anyio/_core/_eventloop.py
++++ python-anyio/src/anyio/_core/_eventloop.py
+@@ -19,7 +19,7 @@
+     from ..abc import AsyncBackend
+ 
+ # This must be updated when new backends are introduced
+-BACKENDS = "asyncio", "trio"
++BACKENDS = ("asyncio", ) # "trio"
+ 
+ T_Retval = TypeVar("T_Retval")
+ PosArgsT = TypeVarTuple("PosArgsT")
+--- python-anyio.orig/tests/conftest.py
++++ python-anyio/tests/conftest.py
+@@ -40,7 +40,6 @@
+             marks=uvloop_marks,
+             id="asyncio+uvloop",
+         ),
+-        pytest.param("trio"),
+     ]
+ )
+ def anyio_backend(request: SubRequest) -> tuple[str, dict[str, Any]]:
